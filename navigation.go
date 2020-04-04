@@ -17,8 +17,8 @@ package main
 
 import (
 	"errors"
-	"github.com/salviati/gomics/archive"
-	"github.com/salviati/gomics/imgdiff"
+	"github.com/krischerven/gomics/archive"
+	"github.com/krischerven/gomics/imgdiff"
 	"math/rand"
 	"os"
 	"path/filepath"

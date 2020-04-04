@@ -18,7 +18,7 @@ package main
 import (
 	"bytes"
 	"github.com/gotk3/gotk3/gdk"
-	"github.com/salviati/gomics/archive"
+	"github.com/krischerven/gomics/archive"
 	"runtime"
 )
 
