@@ -1,0 +1,5 @@
+*.un~
+*.swp
+*.swo
+*.swn
+go.sum
