@@ -17,7 +17,7 @@ package archive
 
 import (
 	"bytes"
-	"github.com/salviati/gomics/natsort"
+	"github.com/krischerven/gomics/natsort"
 	"errors"
 	"github.com/gotk3/gotk3/gdk"
 	"io"
