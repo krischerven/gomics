@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-//go:generate go-bindata about.jpg icon.png gomics.glade
+//go:generate go-bindata ../assets/about.jpg ../assets/icon.png ../assets/gomics.glade
 
 package main
 
@@ -112,7 +112,7 @@ func (gui *GUI) LoadWidgets() (err error) {
 		return err
 	}
 
-	gomics_glade, err := Asset("gomics.glade")
+	gomics_glade, err := Asset("../assets/gomics.glade")
 	tryPanic(err)
 
 	if err = builder.AddFromString(string(gomics_glade)); err != nil {
@@ -205,10 +205,10 @@ func (gui *GUI) initUI() {
 		log.Fatal(err)
 	}
 
-	about, err := Asset("about.jpg")
+	about, err := Asset("../assets/about.jpg")
 	tryPanic(err)
 	gui.AboutDialog.SetLogo(mustLoadPixbuf(about))
-	icon, err := Asset("icon.png")
+	icon, err := Asset("../assets/icon.png")
 	gui.MainWindow.SetIcon(mustLoadPixbuf(icon))
 	tryPanic(err)
 
