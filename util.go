@@ -21,6 +21,7 @@ import (
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/krischerven/gomics/archive"
 	"runtime"
+	"strings"
 )
 
 func min(a, b int) int {
@@ -71,13 +72,17 @@ func tryPanic(err error) {
 	}
 }
 
-func heap(i uint8) {
-	var x runtime.MemStats
-	runtime.ReadMemStats(&x)
-	fmt.Println(fmt.Sprintf("%d: %d", i, x.HeapAlloc))
-}
-
 func gc() {
+	heap := func(i uint8) {
+		var x runtime.MemStats
+		runtime.ReadMemStats(&x)
+		fmt.Println(fmt.Sprintf("%d: %d", i, x.HeapAlloc))
+	}
+	linebreak := func() {
+		fmt.Println(strings.Repeat("-", 10))
+	}
+	_ = heap
+	_ = linebreak
 	runtime.GC()
 	runtime.GC()
 }
