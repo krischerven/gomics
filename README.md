@@ -1,6 +1,6 @@
 # Gomics
 
-A gtk3 comic and image archive viewer written in Go, freely available under GPL v3+.
+A Gtk3 comic and image archive viewer written in Go, freely available under GPL v3+.
 
 ## Screenshot
 
@@ -24,9 +24,9 @@ A gtk3 comic and image archive viewer written in Go, freely available under GPL 
 gtk3, gdk-pixbuf2, glib2. For compiling from source, go and go-bindata are also required.
 
 ## Installation
-Run `./make.sh`.
+Run `./make.sh`. To run gomics, execute bin/gomics.
 
-Arch Linux users can alternatively install the AUR package `gomics-git`.
+Prebuilt binaries for all operating systems are coming soon.
 
 ## Shortcuts
 * Up/down or page up/down or right/left mouse button: previous/next page.
