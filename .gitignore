@@ -4,5 +4,4 @@
 *.swo
 *.swn
 bin/*
-go.sum
 bindata.go
