@@ -506,7 +506,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">First page</property>
                 <property name="label" translatable="yes">First page</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">go-first</property>
+                <property name="icon_name">go-first-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -520,7 +520,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Skip backwards</property>
                 <property name="label" translatable="yes">Skip backwards</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">edit-undo</property>
+                <property name="icon_name">edit-undo-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -534,7 +534,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Previous page</property>
                 <property name="label" translatable="yes">Previous Page</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">go-previous</property>
+                <property name="icon_name">go-previous-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -548,7 +548,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Next page</property>
                 <property name="label" translatable="yes">Next page</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">go-next</property>
+                <property name="icon_name">go-next-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -562,7 +562,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Skip forwards</property>
                 <property name="label" translatable="yes">Skip forwards</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">edit-redo</property>
+                <property name="icon_name">edit-redo-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -576,7 +576,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Last page</property>
                 <property name="label" translatable="yes">Last page</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">go-last</property>
+                <property name="icon_name">go-last-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -600,7 +600,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Previous archive</property>
                 <property name="label" translatable="yes">Previous archive</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">media-seek-backward</property>
+                <property name="icon_name">media-seek-backward-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -614,7 +614,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Next archive</property>
                 <property name="label" translatable="yes">Next archive</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">media-seek-forward</property>
+                <property name="icon_name">media-seek-forward-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -638,7 +638,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Previous scene</property>
                 <property name="label" translatable="yes">Previous scene</property>
                 <property name="use_underline">True</property>
-                <property name="stock_id">gtk-media-rewind</property>
+                <property name="icon_name">media-seek-backward-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -652,7 +652,7 @@ Author: Utkan Güngördü
                 <property name="tooltip_text" translatable="yes">Next scene</property>
                 <property name="label" translatable="yes">Next scene</property>
                 <property name="use_underline">True</property>
-                <property name="stock_id">gtk-go-forward</property>
+                <property name="icon_name">go-next-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -782,9 +782,6 @@ Author: Utkan Güngördü
     <property name="type_hint">dialog</property>
     <property name="transient_for">MainWindow</property>
     <property name="filter">FileFilterArchive</property>
-    <child>
-      <placeholder/>
-    </child>
     <child internal-child="vbox">
       <object class="GtkBox" id="FileChooserDialogArchiveVBox">
         <property name="can_focus">False</property>
