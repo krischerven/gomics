@@ -4,7 +4,7 @@ A gtk3 comic and image archive viewer written in Go, freely available under GPL 
 
 ## Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/salviati/gomics/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/krischerven/gomics/master/assets/screenshot.png)
 
 ## Features
 
