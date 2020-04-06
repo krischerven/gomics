@@ -24,6 +24,10 @@ import (
 	"strings"
 )
 
+var (
+	firstAutomaticGC = true
+)
+
 func min(a, b int) int {
 	if a < b {
 		return a
@@ -73,18 +77,46 @@ func tryPanic(err error) {
 }
 
 func gc() {
+	lastHeapSize := uint64(0)
 	heap := func(i uint8) {
 		var x runtime.MemStats
 		runtime.ReadMemStats(&x)
+		lastHeapSize = x.HeapAlloc
 		fmt.Println(fmt.Sprintf("%d: %d", i, x.HeapAlloc))
 	}
 	linebreak := func() {
 		fmt.Println(strings.Repeat("-", 10))
 	}
+	// on the first gc() call, it actually saves
+	// about a kilobyte of memory to omit the second
+	// runtime.GC() call (+2072 -> +1320 bytes)
+	measureHeapChange := func(fn func()) {
+		a := lastHeapSize
+		fn()
+		fmt.Println(lastHeapSize - a)
+	}
 	_ = heap
 	_ = linebreak
+	_ = measureHeapChange
 	runtime.GC()
+	if !firstAutomaticGC {
+		runtime.GC()
+	} else {
+		firstAutomaticGC = false
+	}
+	/* DEBUGGING CODE
+	heap(1)
 	runtime.GC()
+	heap(2)
+	measureHeapChange(func() {
+		runtime.GC()
+		heap(3)
+	})
+	go func() {
+		time.Sleep(time.Second*5)
+		heap(0)
+	} ()
+	*/
 }
 
 func mustLoadPixbuf(data []byte) *gdk.Pixbuf {
