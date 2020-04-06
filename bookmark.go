@@ -32,7 +32,7 @@ type Bookmark struct {
 }
 
 func (gui *GUI) AddBookmark() {
-	if gui.State.Archive == nil {
+	if !gui.Loaded() {
 		gui.ShowError("Cannot add a bookmark before an archive is opened.")
 		return
 	}
