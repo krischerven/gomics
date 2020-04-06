@@ -113,9 +113,8 @@ func (gui *GUI) LoadWidgets() (err error) {
 	}
 
 	gomics_glade, err := Asset("gomics.glade")
-	if err != nil {
-		panic(err.Error())
-	}
+	tryPanic(err)
+
 	if err = builder.AddFromString(string(gomics_glade)); err != nil {
 		return err
 	}
@@ -207,15 +206,11 @@ func (gui *GUI) initUI() {
 	}
 
 	about, err := Asset("about.jpg")
-	if err != nil {
-		panic(err.Error())
-	}
+	tryPanic(err)
 	gui.AboutDialog.SetLogo(mustLoadPixbuf(about))
 	icon, err := Asset("icon.png")
 	gui.MainWindow.SetIcon(mustLoadPixbuf(icon))
-	if err != nil {
-		panic(err.Error())
-	}
+	tryPanic(err)
 
 	if len(gitVersion) >= 7 {
 		version := fmt.Sprintf("Version: %s (built: %s)\nCompiler version: %s", gitVersion[:7], buildDate, runtime.Version())
