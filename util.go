@@ -17,6 +17,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/krischerven/gomics/archive"
 	"runtime"
@@ -68,6 +69,12 @@ func tryPanic(err error) {
 	if err != nil {
 		panic(err.Error())
 	}
+}
+
+func heap(i uint8) {
+	var x runtime.MemStats
+	runtime.ReadMemStats(&x)
+	fmt.Println(fmt.Sprintf("%d: %d", i, x.HeapAlloc))
 }
 
 func gc() {
