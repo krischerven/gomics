@@ -50,13 +50,11 @@ func clamp(val, low, high float64) float64 {
 	} else if val > high {
 		val = high
 	}
-
 	return val
 }
 
 func fit(sw, sh, fw, fh int) (int, int) {
 	r := float64(sw) / float64(sh)
-
 	var nw, nh float64
 	if float64(fw) >= float64(fh)*r {
 		nw, nh = float64(fh)*r, float64(fh)
@@ -66,16 +64,19 @@ func fit(sw, sh, fw, fh int) (int, int) {
 	return int(nw), int(nh)
 }
 
+func tryPanic(err error) {
+	if err != nil {
+		panic(err.Error())
+	}
+}
+
 func gc() {
-	// TODO do some checks?
 	runtime.GC()
 	runtime.GC()
 }
 
 func mustLoadPixbuf(data []byte) *gdk.Pixbuf {
 	pixbuf, err := archive.LoadPixbuf(bytes.NewBuffer(data), true)
-	if err != nil {
-		panic(err.Error())
-	}
+	tryPanic(err)
 	return pixbuf
 }
