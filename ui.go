@@ -409,15 +409,14 @@ func (gui *GUI) initUI() {
 	gui.ScrolledWindow.SetEvents(gui.ScrolledWindow.GetEvents() | int(gdk.BUTTON_PRESS_MASK))
 
 	gui.ScrolledWindow.Connect("scroll-event", func(w *gtk.ScrolledWindow, e *gdk.Event) {
-		se := &gdk.EventScroll{e}
-
+		se := &gdk.EventScroll{Event: e}
 		gui.Scroll(se.DeltaX(), se.DeltaY())
 	})
 
 	// FIXME
 	gui.ScrolledWindow.Connect("button-press-event", func(_ *gtk.ScrolledWindow, e *gdk.Event) bool {
 		//log.Println(w)
-		be := &gdk.EventButton{e}
+		be := &gdk.EventButton{Event: e}
 		switch be.Button() {
 		case 1:
 			gui.NextPage()
@@ -437,7 +436,7 @@ func (gui *GUI) initUI() {
 	glib.TimeoutAdd(250, gui.UpdateCursorVisibility)
 
 	gui.MainWindow.Connect("key-press-event", func(_ *gtk.Window, e *gdk.Event) {
-		ke := &gdk.EventKey{e}
+		ke := &gdk.EventKey{Event: e}
 
 		shift := ke.State()&uint(gdk.GDK_SHIFT_MASK) != 0
 		ctrl := ke.State()&uint(gdk.GDK_CONTROL_MASK) != 0
