@@ -32,6 +32,10 @@ type Bookmark struct {
 }
 
 func (gui *GUI) AddBookmark() {
+	if gui.State.Archive == nil {
+		return
+	}
+
 	defer gui.RebuildBookmarksMenu()
 
 	for i := range gui.Config.Bookmarks {
@@ -57,6 +61,7 @@ func (gui *GUI) RebuildBookmarksMenu() {
 		gui.MenuBookmarks.Remove(bookmarkMenuItems[i])
 		bookmarkMenuItems[i].Destroy()
 	}
+
 	bookmarkMenuItems = nil
 	gc()
 
@@ -78,5 +83,6 @@ func (gui *GUI) RebuildBookmarksMenu() {
 		bookmarkMenuItems = append(bookmarkMenuItems, bookmarkMenuItem)
 		gui.MenuBookmarks.Append(bookmarkMenuItem)
 	}
+
 	gui.MenuBookmarks.ShowAll()
 }
