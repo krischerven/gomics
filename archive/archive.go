@@ -50,5 +50,5 @@ func NewArchive(path string) (Archive, error) {
 		}
 	}
 
-	return nil, errors.New("Unknown archive type")
+	return nil, errors.New("Unknown or unsupported archive type")
 }
