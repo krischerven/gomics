@@ -32,8 +32,8 @@ type Config struct {
 	ImageDiffThres      float32
 	SceneScanSkip       int
 	SmartScroll         bool
-	Bookmarks           []Bookmark
 	HideIdleCursor      bool
+	Bookmarks           []Bookmark
 }
 
 func (c *Config) Load(path string) error {

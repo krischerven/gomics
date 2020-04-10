@@ -358,7 +358,7 @@ func (gui *GUI) initUI() {
 	})
 
 	gui.PagesToSkipSpinButton.SetRange(1, 100)
-	gui.PagesToSkipSpinButton.SetIncrements(1, 10)
+	gui.PagesToSkipSpinButton.SetIncrements(1, 2)
 	gui.PagesToSkipSpinButton.SetValue(float64(gui.Config.NSkip))
 
 	gui.PagesToSkipSpinButton.Connect("value-changed", func() {
