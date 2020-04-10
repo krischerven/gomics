@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.22.1 
 
-Copyright (C) 2013-2018
-
 This file is part of Gomics.
 
 Gomics is free software: you can redistribute it and/or modify
@@ -738,9 +736,8 @@ Author: Utkan Güngördü
     <property name="type_hint">dialog</property>
     <property name="transient_for">MainWindow</property>
     <property name="program_name">Gomics</property>
-    <property name="copyright" translatable="yes">Copyright 2013-2018, Utkan Güngördü</property>
     <property name="comments" translatable="yes">Gomics is a fast and resource efficient image viewer for comic archives written in Go, freely available under GPL v3.</property>
-    <property name="website">https://github.com/salviati/gomics</property>
+    <property name="website">https://github.com/krischerven/gomics</property>
     <property name="authors">Utkan Güngördü</property>
     <property name="artists">Hiroshi Seo (Ubunchu! artwork, licensed under Creative Commons: Attribution-NonCommercial-ShareAlike 2.1)</property>
     <property name="logo_icon_name"/>
