@@ -486,6 +486,10 @@ func (gui *GUI) initUI() {
 }
 
 func (gui *GUI) goToDialogLoadSetThumbnail() {
+	// prevents a crash
+	if !gui.Loaded() {
+		return
+	}
 	n := int(gui.GoToSpinButton.GetValue() - 1)
 	pixbuf, err := gui.State.Archive.Load(n, gui.Config.EmbeddedOrientation)
 	if err != nil {
