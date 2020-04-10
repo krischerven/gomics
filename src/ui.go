@@ -74,6 +74,7 @@ type GUI struct {
 	SmartScrollCheckButton         *gtk.CheckButton       `build:"SmartScrollCheckButton"`
 	EmbeddedOrientationCheckButton *gtk.CheckButton       `build:"EmbeddedOrientationCheckButton"`
 	HideIdleCursorCheckButton      *gtk.CheckButton       `build:"HideIdleCursorCheckButton"`
+	ResetSettingsButton            *gtk.Button            `build:"ResetSettingsButton"`
 	AddBookmarkMenuItem            *gtk.MenuItem          `build:"AddBookmarkMenuItem"`
 	MenuBookmarks                  *gtk.Menu              `build:"MenuBookmarks"`
 	RecentChooserMenu              *gtk.RecentChooserMenu `build:"RecentChooserMenu"`
@@ -384,6 +385,11 @@ func (gui *GUI) initUI() {
 	gui.HideIdleCursorCheckButton.Connect("toggled", func() {
 		gui.SetHideIdleCursor(gui.HideIdleCursorCheckButton.GetActive())
 
+	})
+
+	gui.ResetSettingsButton.Connect("clicked", func() {
+		gui.Config.Defaults()
+		gui.ShowError("Successfully reset to default settings; restart gomics for changes to take effect.")
 	})
 
 	gui.AddBookmarkMenuItem.Connect("activate", func() {
