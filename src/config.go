@@ -72,7 +72,7 @@ func (c *Config) Defaults() {
 	c.Enlarge = false
 	c.WindowWidth = 640
 	c.WindowHeight = 480
-	c.NSkip = 10
+	c.NSkip = 2
 	c.Seamless = true
 	c.Interpolation = 2
 	c.EmbeddedOrientation = true
