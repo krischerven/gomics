@@ -891,6 +891,11 @@ Author: Kris Cherven
       </object>
     </child>
   </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-delete</property>
+  </object>
   <object class="GtkDialog" id="PreferencesDialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -940,7 +945,7 @@ Author: Kris Cherven
                       <object class="GtkLabel" id="label1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">RESET ALL SETTINGS</property>
+                        <property name="label" translatable="yes">Reset All Settings</property>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -950,10 +955,13 @@ Author: Kris Cherven
                     </child>
                     <child>
                       <object class="GtkButton" id="ResetSettingsButton">
+                        <property name="label" translatable="yes"> </property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="margin_left">155</property>
+                        <property name="image">image1</property>
+                        <property name="always_show_image">True</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
