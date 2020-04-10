@@ -4,5 +4,6 @@
 *.swo
 *.swn
 *#*#
+todo
 bin/*
 bindata.go
