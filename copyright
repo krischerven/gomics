@@ -16,3 +16,7 @@
 
 // All code after commit 8e82d9d7ff8b3ce2582463f641a4f7433b2a44d9 is
 // under the copyright of the author who contributed it.
+
+// All code in the natsort/ folder is under the license stated at
+// the top of each respective file, or the Apache License, Version 2.0,
+// in the case that no license is stated at the top of the file.
