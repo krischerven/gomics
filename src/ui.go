@@ -399,7 +399,6 @@ func (gui *GUI) initUI() {
 
 	// FIXME
 	gui.ScrolledWindow.Connect("button-press-event", func(_ *gtk.ScrolledWindow, e *gdk.Event) bool {
-		//log.Println(w)
 		be := &gdk.EventButton{Event: e}
 		switch be.Button() {
 		case 1:
