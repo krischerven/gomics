@@ -236,8 +236,8 @@ Author: Kris Cherven
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Fullscreen</property>
                         <property name="use_underline">True</property>
-                        <accelerator key="f" signal="activate"/>
                         <accelerator key="F11" signal="activate"/>
+                        <accelerator key="f" signal="activate"/>
                       </object>
                     </child>
                     <child>
@@ -325,9 +325,9 @@ Author: Kris Cherven
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Previous page</property>
                         <property name="use_underline">True</property>
-                        <accelerator key="Page_Up" signal="activate"/>
-                        <accelerator key="space" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <accelerator key="KP_Page_Up" signal="activate"/>
+                        <accelerator key="space" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <accelerator key="Page_Up" signal="activate"/>
                       </object>
                     </child>
                     <child>
@@ -336,9 +336,9 @@ Author: Kris Cherven
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Next page</property>
                         <property name="use_underline">True</property>
-                        <accelerator key="Page_Down" signal="activate"/>
-                        <accelerator key="space" signal="activate"/>
                         <accelerator key="KP_Next" signal="activate"/>
+                        <accelerator key="space" signal="activate"/>
+                        <accelerator key="Page_Down" signal="activate"/>
                       </object>
                     </child>
                     <child>
@@ -375,8 +375,8 @@ Author: Kris Cherven
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">First page</property>
                         <property name="use_underline">True</property>
-                        <accelerator key="KP_Home" signal="activate"/>
                         <accelerator key="Home" signal="activate"/>
+                        <accelerator key="KP_Home" signal="activate"/>
                       </object>
                     </child>
                     <child>
@@ -385,8 +385,8 @@ Author: Kris Cherven
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Last page</property>
                         <property name="use_underline">True</property>
-                        <accelerator key="KP_End" signal="activate"/>
                         <accelerator key="End" signal="activate"/>
+                        <accelerator key="KP_End" signal="activate"/>
                       </object>
                     </child>
                     <child>
@@ -401,8 +401,8 @@ Author: Kris Cherven
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Previous archive</property>
                         <property name="use_underline">True</property>
-                        <accelerator key="KP_Page_Up" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <accelerator key="Page_Up" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <accelerator key="KP_Page_Up" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
                     <child>
@@ -411,8 +411,8 @@ Author: Kris Cherven
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Next archive</property>
                         <property name="use_underline">True</property>
-                        <accelerator key="KP_Next" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <accelerator key="Page_Down" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <accelerator key="KP_Next" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
                     <child>
@@ -928,6 +928,37 @@ Author: Kris Cherven
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <child>
+              <object class="GtkBox" id="PreferencesGeneral">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkBox" id="box5">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="PreferencesGeneralLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">General</property>
+              </object>
+              <packing>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkBox" id="PreferencesAppearance">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -971,6 +1002,9 @@ Author: Kris Cherven
                   <placeholder/>
                 </child>
               </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child type="tab">
               <object class="GtkLabel" id="PreferencesAppearanceLabel">
@@ -979,6 +1013,84 @@ Author: Kris Cherven
                 <property name="label" translatable="yes">Appearance</property>
               </object>
               <packing>
+                <property name="position">1</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="PreferencesDisplay">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkCheckButton" id="OneWideCheckButton">
+                    <property name="label" translatable="yes">Display one wide image in double-page mode</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="EmbeddedOrientationCheckButton">
+                    <property name="label" translatable="yes">Automatically rotate images according to EXIF data</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="SmartScrollCheckButton">
+                    <property name="label" translatable="yes">Use smart scroll</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="HideIdleCursorCheckButton">
+                    <property name="label" translatable="yes">Hide the cursor while stationary</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="PreferencesBehaviorLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Behavior</property>
+              </object>
+              <packing>
+                <property name="position">2</property>
                 <property name="tab_fill">False</property>
               </packing>
             </child>
@@ -1084,84 +1196,7 @@ Author: Kris Cherven
                 </child>
               </object>
               <packing>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child type="tab">
-              <object class="GtkLabel" id="PreferencesBehaviorLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Behavior</property>
-              </object>
-              <packing>
-                <property name="position">1</property>
-                <property name="tab_fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkBox" id="PreferencesDisplay">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkCheckButton" id="OneWideCheckButton">
-                    <property name="label" translatable="yes">Display one wide image in double-page mode</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="EmbeddedOrientationCheckButton">
-                    <property name="label" translatable="yes">Automatically rotate images according to EXIF data</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="SmartScrollCheckButton">
-                    <property name="label" translatable="yes">Use smart scroll</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="HideIdleCursorCheckButton">
-                    <property name="label" translatable="yes">Hide the cursor while stationary</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">3</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="position">2</property>
+                <property name="position">3</property>
               </packing>
             </child>
             <child type="tab">
@@ -1171,7 +1206,7 @@ Author: Kris Cherven
                 <property name="label" translatable="yes">Display</property>
               </object>
               <packing>
-                <property name="position">2</property>
+                <property name="position">3</property>
                 <property name="tab_fill">False</property>
               </packing>
             </child>
