@@ -71,8 +71,8 @@ func (c *Config) Defaults() {
 		// cannot use zero-values
 		ZoomMode: "BestFit",
 		Shrink: true,
-		WindowWidth: 640,
-		WindowHeight: 480,
+		WindowWidth: 1108,
+		WindowHeight: 832,
 		NSkip: 2,
 		Seamless: true,
 		Interpolation: 2,

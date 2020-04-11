@@ -469,6 +469,7 @@ func (gui *GUI) initUI() {
 	gui.RebuildBookmarksMenu()
 
 	gui.MainWindow.SetDefaultSize(gui.Config.WindowWidth, gui.Config.WindowHeight)
+
 	gui.MainWindow.ShowAll()
 
 	// Tiny hack
