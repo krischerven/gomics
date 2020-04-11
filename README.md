@@ -26,7 +26,7 @@ gtk3, gdk-pixbuf2, glib2. For compiling from source, go and go-bindata are also 
 ## Installation
 Run `./make.sh`. To run gomics, execute bin/gomics.
 
-Prebuilt binaries for all operating systems are coming soon.
+Prebuilt binaries are currently only provided for Linux. It's recommended that you use one of them if possible, because they are less likely to include breaking changed compared to a binary built from source. https://github.com/krischerven/gomics/releases
 
 ## Shortcuts
 * Up/down or page up/down or right/left mouse button: previous/next page.
