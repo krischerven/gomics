@@ -67,17 +67,18 @@ func (c *Config) Save(path string) error {
 }
 
 func (c *Config) Defaults() {
-	c.ZoomMode = "BestFit"
-	c.Shrink = true
-	c.Enlarge = false
-	c.WindowWidth = 640
-	c.WindowHeight = 480
-	c.NSkip = 2
-	c.Seamless = true
-	c.Interpolation = 2
-	c.EmbeddedOrientation = true
-	c.ImageDiffThres = 0.4
-	c.SceneScanSkip = 5
-	c.SmartScroll = true
-	c.HideIdleCursor = true
+	*c = Config{
+		ZoomMode: "BestFit",
+		Shrink: true,
+		WindowWidth: 640,
+		WindowHeight: 480,
+		NSkip: 2,
+		Seamless: true,
+		Interpolation: 2,
+		EmbeddedOrientation: true,
+		ImageDiffThres: 0.4,
+		SceneScanSkip: 5,
+		SmartScroll: true,
+		HideIdleCursor: true,
+	}
 }
