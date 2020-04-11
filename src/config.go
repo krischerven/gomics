@@ -68,6 +68,7 @@ func (c *Config) Save(path string) error {
 
 func (c *Config) Defaults() {
 	*c = Config{
+		// cannot use zero-values
 		ZoomMode: "BestFit",
 		Shrink: true,
 		WindowWidth: 640,
@@ -80,5 +81,8 @@ func (c *Config) Defaults() {
 		SceneScanSkip: 5,
 		SmartScroll: true,
 		HideIdleCursor: true,
+		// always retain these variables
+		Bookmarks: c.Bookmarks,
+		LastDirectory: c.LastDirectory,
 	}
 }
